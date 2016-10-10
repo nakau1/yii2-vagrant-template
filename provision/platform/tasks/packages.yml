@@ -1,35 +1,27 @@
 ---
-#- name: be sure all existing packages are updated
-#  yum: name=* state=latest
+- name: INSTALL MYSQL-PYTHON
+  yum: name=MySQL-python state=present enablerepo=epel
 
-- yum: name=MySQL-python state=present enablerepo=epel
-
-- name: Check if selinux is installed
+- name: CHECK IF SELINUX IS INSTALLED
   command: getenforce
   register: command_result
   ignore_errors: True
 
-- name: Install libselinux-python
+- name: INSTALL LIBSELINUX-PYTHON
   yum: name={{ item }}
   with_items:
     - epel-release
     - libselinux-python
   when: command_result|success and command_result.stdout != 'Disabled'
 
-- name: Bash path setting script
+- name: BASH PATH SETTING
   script: ../scripts/bash-setting.sh
 
-- name: Composer install scripts
+- name: COMPOSER INSTALL
   script: ../scripts/install-composer.sh creates=/usr/local/bin/composer
 
-- name: Npm install scripts
+- name: NPM INSTALL
   script: ../scripts/install-npm.sh
 
-- name: Get Selenium server scripts
-  script: ../scripts/get-selenium.sh
-
-- name: Copy at selenium-server service
-  copy: src=selenium-server.service dest=/etc/systemd/system/selenium-server.service  owner=root group=root mode=0644
-
-- name: Daemon reload
+- name: DEAMON RELOAD
   command: systemctl daemon-reload
