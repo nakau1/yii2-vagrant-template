@@ -9,7 +9,7 @@ do
 done
 
 if [ $ENV_NAME != false ] ; then
-    cd /var/www/wasabi && \
+    cd /var/www/neroblu && \
     git checkout ${ENV_NAME} && \
     git pull origin ${ENV_NAME} && \
     cd src && \

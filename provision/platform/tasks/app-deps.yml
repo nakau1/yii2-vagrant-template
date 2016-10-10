@@ -3,5 +3,5 @@
 #- mysql_user: name=root password=oz-vision123 priv=daifuku.*:ALL state=present
 
 - name: be sure app runtime dir exists
-  file: path=/var/www/wasabi/runtime state=directory owner={{ user }} group={{ user }} mode=0777
+  file: path=/var/www/neroblu/runtime state=directory owner={{ user }} group={{ user }} mode=0777
 

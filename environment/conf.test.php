@@ -16,7 +16,7 @@ return [
         'username' => 'daifuku',
         'password' => 'dorubakodorubako',
     ],
-    'appHost' => 'pollet.vagrant.net',
+    'appHost' => 'neroblu.vagrant.net',
     'supportTo' => 'ueda@tech-vein.com',
     'batchTo' => 'ueda@tech-vein.com',
 ];

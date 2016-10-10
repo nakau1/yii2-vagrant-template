@@ -1,4 +1,4 @@
-# wasabi ![](https://circleci.com/gh/oz-sysb/wasabi.svg?style=shield&circle-token=35bdb750bd4362e274db3e93340d5387d65530bb)
+# neroblu ![](https://circleci.com/gh/oz-sysb/neroblu.svg?style=shield&circle-token=35bdb750bd4362e274db3e93340d5387d65530bb)
 
 # 環境構築手順
 
@@ -23,13 +23,13 @@ vagrant plugin install vagrant-vbguest
 hostsの編集
 
 ```
-172.16.22.10    pollet.vagrant.net
+172.16.2.10    neroblu.vagrant.net
 ```
 
 vagrant の開始
 ### Windowsの場合
 非推奨環境
-今後更新があった際の動作保証はできないが手順は[こちら](https://github.com/oz-sysb/wasabi/wiki/Windowsでの環境構築)
+今後更新があった際の動作保証はできないが手順は[こちら](https://github.com/oz-sysb/neroblu/wiki/Windowsでの環境構築)
 
 ### Mac や ubuntu 等の Unix 系OSの場合
 
@@ -76,7 +76,7 @@ vagrant ssh
 ```
 
 ```
-cd /var/www/wasabi/src
+cd /var/www/neroblu/src
 php yii migrate/up
 ```
 

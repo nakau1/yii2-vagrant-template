@@ -1,3 +1,3 @@
 #!/bin/bash
-cd /var/www/wasabi
+cd /var/www/neroblu
 npm install --no-bin-links

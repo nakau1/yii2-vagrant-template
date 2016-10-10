@@ -7,7 +7,7 @@ if [ -a '/root/init_apache.log' ]; then
         exit 1
 fi
 
-ln -s /vagrant /var/www/wasabi
+ln -s /vagrant /var/www/neroblu
 cp -p -Rf /vagrant/setup/httpd/httpd.conf /etc/httpd/conf/httpd.conf
 
 # Set inited Log

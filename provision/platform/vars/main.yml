@@ -9,5 +9,5 @@ hosts:
 
 sites:
     - name: "{{ domain }}"
-      root: "/var/www/wasabi/src/web"
+      root: "/var/www/neroblu/src/web"
       log:  "/var/log/httpd"

@@ -15,7 +15,7 @@ return [
         'username' => 'root',
         'password' => 'oz-vision123',
     ],
-    'appHost' => 'pollet.vagrant.net',
+    'appHost' => 'neroblu.vagrant.net',
     'supportTo' => 'ueda@tech-vein.com',
     'batchTo' => 'ueda@tech-vein.com',
 ];

@@ -112,7 +112,7 @@ class MakeCedynaPaymentFileControllerTest extends TestCase
     }
 
     /**
-     * テストケース9 https://github.com/oz-sysb/wasabi/issues/61
+     * テストケース9 https://github.com/oz-sysb/neroblu/issues/61
      * @test
      */
     public function 入金ファイル作成中のデータ件数だけデータ行が出力される_データ1件()
@@ -132,7 +132,7 @@ class MakeCedynaPaymentFileControllerTest extends TestCase
     }
 
     /**
-     * テストケース10 https://github.com/oz-sysb/wasabi/issues/61
+     * テストケース10 https://github.com/oz-sysb/neroblu/issues/61
      * @test
      */
     public function 入金ファイル作成中のデータ件数だけデータ行が出力される_データ複数件()
@@ -152,7 +152,7 @@ class MakeCedynaPaymentFileControllerTest extends TestCase
     }
 
     /**
-     * テストケース11 https://github.com/oz-sysb/wasabi/issues/61
+     * テストケース11 https://github.com/oz-sysb/neroblu/issues/61
      * @test
      */
     public function 処理したデータ行の数が終端行に出力される_データ1件()
@@ -176,7 +176,7 @@ class MakeCedynaPaymentFileControllerTest extends TestCase
     }
 
     /**
-     * テストケース12 https://github.com/oz-sysb/wasabi/issues/61
+     * テストケース12 https://github.com/oz-sysb/neroblu/issues/61
      * @test
      */
     public function 処理したデータ行の数が終端行に出力される_データ複数件()
