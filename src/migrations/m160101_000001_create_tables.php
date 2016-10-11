@@ -6,6 +6,8 @@ use yii\db\Migration;
  */
 class m160101_000001_create_tables extends Migration
 {
+    const TABLE_OPTION = 'CHARACTER SET utf8 COLLATE utf8_general_ci ENGINE=InnoDB';
+
     /**
      * @inheritdoc
      */
@@ -19,7 +21,7 @@ class m160101_000001_create_tables extends Migration
             'description' => $this->text()->null()->comment('自己紹介'),
             'created_at'  => $this->integer()->null()->comment('作成日時'),
             'updated_at'  => $this->integer()->null()->comment('更新日時'),
-        ]);
+        ], self::TABLE_OPTION);
     }
 
     /**
