@@ -30,7 +30,8 @@ class UserAuth extends ActiveRecord
     public function rules()
     {
         return [
-            [['password', 'uuid', 'device_token', 'access_token'], 'string', 'max' => 256],
+            [['uuid', 'device_token', 'access_token'], 'string', 'max' => 256],
+            [['password'], 'string', 'max' => 20],
         ];
     }
 
