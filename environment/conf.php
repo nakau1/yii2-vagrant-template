@@ -16,6 +16,6 @@ return [
         'password' => 'oz-vision123',
     ],
     'appHost' => 'neroblu.vagrant.net',
-    'supportTo' => 'ueda@tech-vein.com',
-    'batchTo' => 'ueda@tech-vein.com',
+    'supportTo' => 'yuichi.nakayasu@gmail.com',
+    'batchTo' => 'yuichi.nakayasu@gmail.com',
 ];
