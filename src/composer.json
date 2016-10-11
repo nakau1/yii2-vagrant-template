@@ -26,10 +26,7 @@
         "yiisoft/yii2-debug": "2.0.*",
         "yiisoft/yii2-gii": "2.0.*",
         "yiisoft/yii2-faker": "2.0.*",
-        "phpunit/phpunit": "^5.4",
-        "codeception/codeception": "2.1.*",
-        "codeception/specify": "0.4.*",
-        "codeception/verify": "0.3.*"
+        "phpunit/phpunit": "^5.4"
     },
     "config": {
         "process-timeout": 1800,
