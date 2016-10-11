@@ -1,0 +1,7 @@
+---
+- name: INCLUDE COMMON VARIABLES
+  include_vars: common-vars.yml
+
+- include: packages.yml
+- include: services.yml
+- include: app-deps.yml

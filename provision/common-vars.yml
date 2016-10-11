@@ -1,0 +1,5 @@
+---
+domain: neroblu.vagrant.net
+user: vagrant
+group: vagrant
+user_home: /home/vagrant

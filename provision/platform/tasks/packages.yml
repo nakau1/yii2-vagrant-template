@@ -1,0 +1,27 @@
+---
+- name: INSTALL MYSQL-PYTHON
+  yum: name=MySQL-python state=present enablerepo=epel
+
+- name: CHECK IF SELINUX IS INSTALLED
+  command: getenforce
+  register: command_result
+  ignore_errors: True
+
+- name: INSTALL LIBSELINUX-PYTHON
+  yum: name={{ item }}
+  with_items:
+    - epel-release
+    - libselinux-python
+  when: command_result|success and command_result.stdout != 'Disabled'
+
+- name: BASH PATH SETTING
+  script: ../scripts/bash-setting.sh
+
+- name: COMPOSER INSTALL
+  script: ../scripts/install-composer.sh creates=/usr/local/bin/composer
+
+- name: NPM INSTALL
+  script: ../scripts/install-npm.sh
+
+- name: DEAMON RELOAD
+  command: systemctl daemon-reload

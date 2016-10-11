@@ -1,0 +1,16 @@
+---
+- name: APP - IMCLUDE COMMON VARIABLES
+  include_vars: common-vars.yml
+
+- name: SETUP COMPOSER
+  command: /opt/php7/bin/php /usr/local/bin/composer global require "fxp/composer-asset-plugin:^1.2.0" --no-plugins creates=/home/vagrant/.composer/vendor/fxp/composer-asset-plugin
+
+- name: INSTALL COMPOSER
+  command: /opt/php7/bin/php /usr/local/bin/composer install
+  args:
+    chdir: "/var/www/neroblu/src"
+
+- name: YII MIGRATE UP
+  command: /opt/php7/bin/php ./yii migrate/up --interactive=0
+  args:
+    chdir: "/var/www/neroblu/src"

@@ -1,0 +1,7 @@
+---
+- name: MYSQL SETTING
+  mysql_db: name=daifuku state=present login_password=oz-vision123
+
+- name: RUNTIME DIRECTORY SETTING
+  file: path=/var/www/neroblu/runtime state=directory owner={{ user }} group={{ user }} mode=0777
+
