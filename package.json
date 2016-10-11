@@ -1,0 +1,25 @@
+{
+  "name": "neroblu",
+  "version": "0.0.0",
+  "description": "",
+  "main": "web/index.php",
+  "private": true,
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oz-sysb/neroblu.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/oz-sysb/neroblu/issues"
+  },
+  "dependencies": {
+    "phantomjs-prebuilt": "^2.1.12"
+  }
+}
