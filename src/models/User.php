@@ -17,6 +17,7 @@ use yii\web\IdentityInterface;
  * @property string $status
  * @property string $role
  * @property string $description
+ * @property string $token
  * @property integer $created_at
  * @property integer $updated_at
  */
@@ -54,7 +55,7 @@ class User extends ActiveRecord implements IdentityInterface
         return [
             [['description'], 'string'],
             [['created_at', 'updated_at'], 'integer'],
-            [['name', 'email'], 'string', 'max' => 256],
+            [['name', 'email', 'token'], 'string', 'max' => 256],
             [['status', 'role'], 'string', 'max' => 32],
         ];
     }
@@ -71,6 +72,7 @@ class User extends ActiveRecord implements IdentityInterface
             'status' => 'ステータス',
             'role' => '権限',
             'description' => '自己紹介',
+            'token' => 'トークン',
             'created_at' => '作成日時',
             'updated_at' => '更新日時',
         ];
