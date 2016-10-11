@@ -5,6 +5,7 @@ use app\models\queries\UserQuery;
 use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
+use yii\db\ActiveQuery;
 use yii\web\IdentityInterface;
 
 /**
@@ -20,6 +21,8 @@ use yii\web\IdentityInterface;
  * @property string $token
  * @property integer $created_at
  * @property integer $updated_at
+ *
+ * @property UserAuth $auth
  */
 class User extends ActiveRecord implements IdentityInterface
 {
@@ -91,6 +94,18 @@ class User extends ActiveRecord implements IdentityInterface
         return new UserQuery(get_called_class());
     }
 
+    // ===============================================================
+    // relation
+    // ===============================================================
+
+    /**
+     * @return ActiveQuery
+     */
+    public function getAuth()
+    {
+        return $this->hasOne(UserAuth::className(), ['user_id' => 'id']);
+    }
+    
     // ===============================================================
     // implementation for IdentityInterface
     // ===============================================================

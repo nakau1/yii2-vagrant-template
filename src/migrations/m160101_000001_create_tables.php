@@ -26,6 +26,14 @@ class m160101_000001_create_tables extends Migration
             'created_at'  => $this->integer()->null()->comment('作成日時'),
             'updated_at'  => $this->integer()->null()->comment('更新日時'),
         ], self::TABLE_OPTION);
+
+        $this->createTable('user_auth', [
+            'user_id'      => $this->primaryKey()->comment('ユーザID'),
+            'password'     => $this->string(256)->null()->comment('パスワード'),
+            'uuid'         => $this->string(256)->null()->comment('UUID'),
+            'device_token' => $this->string(256)->null()->comment('デバイストークン'),
+            'access_token' => $this->string(256)->null()->comment('アクセストークン'),
+        ], self::TABLE_OPTION);
     }
 
     /**
