@@ -1,0 +1,2 @@
+cd ~/Desktop/yii2-vagrant
+vagrant up --provision

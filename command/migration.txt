@@ -1,0 +1,12 @@
+cd ~/Desktop/yii2-vagrant
+vagrant ssh
+cd /var/www/neroblu/src/
+sudo su
+mysql -u root -poz-vision123
+drop database session;
+drop database daifuku;
+create database daifuku;
+create database session;
+exit;
+exit
+php yii migrate
