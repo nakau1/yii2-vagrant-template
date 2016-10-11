@@ -1,11 +1,11 @@
 <?php
 $config = array_merge_recursive(require(__DIR__ . '/common.php'), [
-    'id'                  => 'pollet-web',
+    'id'                  => 'neroblu-web',
     'controllerNamespace' => 'app\controllers',
     'components'          => [
         'request'      => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => 'owq0RvztGJFhFz9-uoO3buZk1j_AhW8Y',
+            'cookieValidationKey' => 'owq1RvztGJFhFz9-uoO3buZk1j_AhW8Y',
         ],
         'urlManager'   => [
             'enablePrettyUrl' => true,
@@ -13,7 +13,7 @@ $config = array_merge_recursive(require(__DIR__ . '/common.php'), [
             'rules'           => require(__DIR__ . '/routes.php'),
         ],
         'user'         => [
-            'identityClass'   => 'app\models\PolletUser',
+            'identityClass'   => 'app\models\User',
             'loginUrl'        => ['/'],
             'enableAutoLogin' => true,
         ],

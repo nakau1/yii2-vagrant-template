@@ -2,7 +2,7 @@
 $envConf = \app\Environment::get();
 
 return [
-    'id' => 'pollet',
+    'id' => 'neroblu',
     'language' => 'ja',
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'runtimePath' => dirname(dirname(__DIR__)) . '/runtime',
@@ -53,23 +53,6 @@ return [
             'class' => 'yii\web\DbSession',
             'db' => 'sessionDb',
             'sessionTable' => 'session',
-        ],
-        'cedynaMyPage' => [
-            'class' => 'app\models\cedyna_my_pages\CedynaMyPage',
-            'selenium' => [
-                'class' => '\app\helpers\Selenium',
-            ],
-        ],
-        'cedynaMyPageWithCache' => [
-            'class' => 'app\models\cedyna_my_pages\CedynaMyPageWithCache',
-            'cardValueCacheSeconds' => 60 * 10,
-            'tradingHistoryCacheSeconds' => 60 * 10,
-            'selenium' => [
-                'class' => '\app\helpers\Selenium',
-            ],
-        ],
-        'curl' => [
-            'class' => '\linslin\yii2\curl\Curl'
         ],
     ],
     'params' => [

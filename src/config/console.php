@@ -2,7 +2,7 @@
 Yii::setAlias('@tests', dirname(__DIR__) . '/tests');
 
 $config = array_merge_recursive(require(__DIR__ . '/common.php'), [
-    'id' => 'pollet-console',
+    'id' => 'neroblu-console',
     'controllerNamespace' => 'app\commands',
     'components' => [
 
