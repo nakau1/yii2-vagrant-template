@@ -1,0 +1,18 @@
+cd ~/Desktop/yii2-vagrant
+vagrant ssh
+cd /var/www/neroblu/src/
+sudo su
+mysql -u root -poz-vision123
+use daifuku
+
+SET foreign_key_checks = 0;
+TRUNCATE TABLE user;
+SET foreign_key_checks = 1;
+
+INSERT INTO user (name, email, description, token)
+VALUES
+('Nakayasu', 'yuichi.nakayasu@gmail.com', '', 'test-token');
+
+exit
+exit
+exit
