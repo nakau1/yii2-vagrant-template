@@ -1,22 +1,31 @@
 <?php
+
+use app\modules\api\controllers\CommonController;
+use yii\base\Event;
+use yii\web\Response;
+
 return [
-    'id'                  => 'pollet-api',
+    'id'                  => 'neroblu-api',
     'controllerNamespace' => 'app\modules\api\controllers',
     'components'          => [
-        'errorHandler' => [
-            'errorAction' => 'api/default/error',
-        ],
         'response'     => [
-            'on beforeSend' => function (\yii\base\Event $event) {
-                /** @var \yii\web\Response $response */
+            'on beforeSend' => function (Event $event) {
+                /** @var Response $response */
                 $response = $event->sender;
 
-                // エラー時のレスポンスを設定する
                 if ($response->data !== null && !$response->isSuccessful) {
-                    $response->data = [
-                        'code'   => $response->getStatusCode(),
-                        'message' => isset($response->data['message']) ? $response->data['message'] : '',
-                    ];
+
+                    $result = [];
+                    if (isset($response->data[CommonController::RESULT_KEY])) {
+                        $result = $response->data[CommonController::RESULT_KEY];
+                    } else if (isset($response->data[CommonController::MESSAGE_KEY])) {
+                        $result = [CommonController::ERRORS_KEY => [$response->data[CommonController::MESSAGE_KEY]]];
+                    }
+
+                    $response->data = CommonController::generateResult(
+                        $response->getStatusCode(),
+                        $result
+                    );
                 }
             },
         ],

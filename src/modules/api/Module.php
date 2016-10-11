@@ -1,9 +1,7 @@
 <?php
-
 namespace app\modules\api;
 
 use app\modules\ReconfigureTrait;
-use Yii;
 
 class Module extends \yii\base\Module
 {
@@ -14,7 +12,6 @@ class Module extends \yii\base\Module
     public function init()
     {
         parent::init();
-
         $this->reconfigure(require __DIR__ . '/config/api.php');
     }
 }

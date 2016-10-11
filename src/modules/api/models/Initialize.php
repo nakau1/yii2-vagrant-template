@@ -1,5 +1,4 @@
 <?php
-
 namespace app\modules\api\models;
 
 use app\models\PolletUser;
