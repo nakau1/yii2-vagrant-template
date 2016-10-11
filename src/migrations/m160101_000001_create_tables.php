@@ -12,15 +12,13 @@ class m160101_000001_create_tables extends Migration
     public function up()
     {
         $this->createTable('user', [
-            'pollet_id'            => $this->primaryKey(),
-            'cedyna_id'            => $this->bigInteger()->null()->unique(),
-            'password'             => $this->string(256)->null(),
-            'total_point'          => $this->decimal(9, 1)->notNull()->defaultValue(0),
-            'mail_address'         => $this->string(256)->null(),
-            'registration_status'  => $this->string(35)->notNull(),
-            'unread_notifications' => $this->integer()->notNull()->defaultValue(0),
-            'modified_date'        => $this->timestamp()->null(),
-            'registered_date'      => $this->timestamp()->null(),
+            'id'          => $this->primaryKey()->comment('ユーザID'),
+            'name'        => $this->string(256)->null()->comment('ユーザ名'),
+            'email'       => $this->string(256)->null()->comment('メールアドレス'),
+            'status'      => $this->string(20)->null()->comment('ステータス'),
+            'description' => $this->text()->null()->comment('自己紹介'),
+            'created_at'  => $this->integer()->null()->comment('作成日時'),
+            'updated_at'  => $this->integer()->null()->comment('更新日時'),
         ]);
     }
 

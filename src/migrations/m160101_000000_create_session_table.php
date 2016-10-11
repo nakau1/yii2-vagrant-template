@@ -18,9 +18,9 @@ class m160101_000000_create_session_table extends Migration
     public function up()
     {
         $this->createTable('session', [
-            'id' => $this->char(40),
+            'id'     => $this->char(40),
             'expire' => $this->integer(),
-            'data' => $this->binary(),
+            'data'   => $this->binary(),
             'PRIMARY KEY(id)',
         ]);
         $this->createIndex('index-expire', 'session', 'expire');
