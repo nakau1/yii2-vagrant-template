@@ -12,6 +12,12 @@ use yii\web\IdentityInterface;
  * @package app\models
  *
  * @property integer $id
+ * @property string $name
+ * @property string $email
+ * @property string $status
+ * @property string $description
+ * @property integer $created_at
+ * @property integer $updated_at
  */
 class User extends ActiveRecord implements IdentityInterface
 {
@@ -39,7 +45,10 @@ class User extends ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
-
+            [['description'], 'string'],
+            [['created_at', 'updated_at'], 'integer'],
+            [['name', 'email'], 'string', 'max' => 256],
+            [['status'], 'string', 'max' => 20],
         ];
     }
 
@@ -49,7 +58,13 @@ class User extends ActiveRecord implements IdentityInterface
     public function attributeLabels()
     {
         return [
-
+            'id' => 'ユーザID',
+            'name' => 'ユーザ名',
+            'email' => 'メールアドレス',
+            'status' => 'ステータス',
+            'description' => '自己紹介',
+            'created_at' => '作成日時',
+            'updated_at' => '更新日時',
         ];
     }
 
