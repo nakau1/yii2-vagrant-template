@@ -16,20 +16,16 @@ use yii\web\IdentityInterface;
  * @property string $name
  * @property string $email
  * @property string $status
- * @property string $role
- * @property string $description
  * @property integer $created_at
  * @property integer $updated_at
  *
+ * @property UserPlatform $platform
  * @property UserAuth $auth
  */
 class User extends ActiveRecord implements IdentityInterface
 {
     const STATUS_ACTIVE  = 'active';
     const STATUS_REMOVED = 'removed';
-
-    const ROLE_GUEST = 'guest';
-    const ROLE_ADMIN = 'admin';
 
     /**
      * @inheritdoc
@@ -55,10 +51,9 @@ class User extends ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
-            [['description'], 'string'],
             [['created_at', 'updated_at'], 'integer'],
             [['name', 'email'], 'string', 'max' => 256],
-            [['status', 'role'], 'string', 'max' => 32],
+            [['status'], 'string', 'max' => 32],
         ];
     }
 
@@ -72,8 +67,6 @@ class User extends ActiveRecord implements IdentityInterface
             'name' => 'ユーザ名',
             'email' => 'メールアドレス',
             'status' => 'ステータス',
-            'role' => '権限',
-            'description' => '自己紹介',
             'created_at' => '作成日時',
             'updated_at' => '更新日時',
         ];
@@ -95,6 +88,14 @@ class User extends ActiveRecord implements IdentityInterface
     // ===============================================================
     // relation
     // ===============================================================
+
+    /**
+     * @return ActiveQuery
+     */
+    public function getPlatform()
+    {
+        return $this->hasOne(UserPlatform::className(), ['user_id' => 'id']);
+    }
 
     /**
      * @return ActiveQuery

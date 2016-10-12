@@ -10,9 +10,6 @@ use yii\db\ActiveRecord;
  *
  * @property integer $user_id
  * @property string $password
- * @property string $uuid
- * @property string $device_token
- * @property string $access_token
  */
 class UserAuth extends ActiveRecord
 {
@@ -30,8 +27,7 @@ class UserAuth extends ActiveRecord
     public function rules()
     {
         return [
-            [['uuid', 'device_token', 'access_token'], 'string', 'max' => 256],
-            [['password'], 'string', 'max' => 20],
+            [['password'], 'string', 'max' => 256],
         ];
     }
 
@@ -43,9 +39,6 @@ class UserAuth extends ActiveRecord
         return [
             'user_id' => 'ユーザID',
             'password' => 'パスワード',
-            'uuid' => 'UUID',
-            'device_token' => 'デバイストークン',
-            'access_token' => 'アクセストークン',
         ];
     }
 
